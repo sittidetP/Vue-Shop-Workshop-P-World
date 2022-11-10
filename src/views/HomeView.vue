@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ShopCard from "@/component/ShopCard.vue";
 import type { GoodsData } from "@/models/shop.model";
 import { GetGoodsesData } from "@/services/shop.service";
 import { ref } from "vue";
@@ -12,17 +13,25 @@ console.log(goodsesData);
 
 <template>
   <div class="container mw-[1024px] mx-auto">
-    <div class="text-center text-4xl">Welcome to Shop project !</div>
-    <div class="card w-96 bg-base-100 shadow-xl">
-      <figure>
-        <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary">Buy Now</button>
-        </div>
+    <div class="flex flex-col gap-8 items-center">
+      <div class="flex gap-8 flex-wrap justify-center">
+        <ShopCard
+          v-for="goods of goodsesData"
+          :key="goods.id"
+          :id="goods.id"
+          :category="goods.category"
+          :title="goods.title"
+          :price="goods.price"
+          :image="goods.image"
+        >
+        </ShopCard>
+        <!-- <PokemonCard
+          v-for="pokemon of pokemons"
+          :key="pokemon.name"
+          :name="pokemon.name"
+          :img="pokemon.img"
+          @view-detail="onViewDetail"
+        ></PokemonCard> -->
       </div>
     </div>
   </div>
