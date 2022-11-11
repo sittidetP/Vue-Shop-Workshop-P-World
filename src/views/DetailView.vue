@@ -15,6 +15,8 @@ const goods = ref<GoodsDetailData>();
 GetGoodsById(Number(goodsID)).then((value) => (goods.value = value));
 
 const onNavigateBack = () => router.back();
+
+const onCheckoutPage = () => router.push({ name: "checkout" });
 </script>
 
 <template>
@@ -33,7 +35,12 @@ const onNavigateBack = () => router.back();
         </article>
         <div class="flex justify-end">
           <div>
-            <button class="btn btn-primary text-white">Buy Now</button>
+            <button
+              class="btn btn-primary text-white"
+              @click="onCheckoutPage()"
+            >
+              Buy Now
+            </button>
           </div>
         </div>
       </div>
