@@ -1,1 +1,3 @@
-GET https://e-commerce-workshop-api.vercel.app/api/products
+# GET https://e-commerce-workshop-api.vercel.app/api/products
+
+GET https://e-commerce-workshop-api.vercel.app/api/products/2

@@ -15,3 +15,12 @@ export interface GoodsData {
   category: string;
   image: string;
 }
+
+export interface GoodsDetailData {
+  id: number;
+  title: string;
+  price: number;
+  category: string;
+  description: string;
+  image: string;
+}
