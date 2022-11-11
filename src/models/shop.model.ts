@@ -24,3 +24,11 @@ export interface GoodsDetailData {
   description: string;
   image: string;
 }
+
+export interface ShopCheckoutData {
+  firstname: string;
+  lastname: string;
+  productId: number;
+  quantity: number;
+  address: string;
+}
