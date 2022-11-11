@@ -16,7 +16,9 @@ GetGoodsById(Number(goodsID)).then((value) => (goods.value = value));
 
 const onNavigateBack = () => router.back();
 
-const onCheckoutPage = () => router.push({ name: "checkout" });
+const onCheckoutPage = (id: number | undefined) => {
+  if (id != undefined) router.push({ name: "checkout", params: { id: id } });
+};
 </script>
 
 <template>
@@ -37,7 +39,7 @@ const onCheckoutPage = () => router.push({ name: "checkout" });
           <div>
             <button
               class="btn btn-primary text-white"
-              @click="onCheckoutPage()"
+              @click="onCheckoutPage(goods?.id)"
             >
               Buy Now
             </button>
