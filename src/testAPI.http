@@ -1,3 +1,4 @@
 # GET https://e-commerce-workshop-api.vercel.app/api/products
 
-GET https://e-commerce-workshop-api.vercel.app/api/products/2
+# GET https://e-commerce-workshop-api.vercel.app/api/products/2
+POST https://e-commerce-workshop-api.vercel.app/api/checkout

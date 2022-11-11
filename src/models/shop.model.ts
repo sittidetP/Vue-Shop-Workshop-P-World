@@ -32,3 +32,8 @@ export interface ShopCheckoutData {
   quantity: number;
   address: string;
 }
+
+export interface CheckoutAPIResponse {
+  status: string;
+  error: string;
+}

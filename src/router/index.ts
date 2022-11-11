@@ -2,6 +2,7 @@ import DetailView from "../views/DetailView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CheckoutView from "@/views/CheckoutView.vue";
+import SuccessView from "@/views/SuccessView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,11 @@ const router = createRouter({
       path: "/checkout/:id",
       name: "checkout",
       component: CheckoutView,
+    },
+    {
+      path: "/success",
+      name: "success",
+      component: SuccessView,
     },
   ],
 });

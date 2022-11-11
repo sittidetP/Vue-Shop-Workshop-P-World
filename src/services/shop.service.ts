@@ -2,6 +2,7 @@ import type {
   GoodsAPIData,
   GoodsData,
   GoodsDetailData,
+  ShopCheckoutData,
 } from "@/models/shop.model";
 
 import axios from "axios";
@@ -31,4 +32,13 @@ export const GetGoodsById = async (id: number): Promise<GoodsDetailData> => {
     image: data.image,
     category: data.category,
   };
+};
+
+export const Checkout = async (checkoutData: ShopCheckoutData) => {
+  const response = await axios.post(
+    "https://e-commerce-workshop-api.vercel.app/api/checkout",
+    checkoutData
+  );
+
+  return response.data;
 };

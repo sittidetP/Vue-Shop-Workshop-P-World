@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { GoodsDetailData, ShopCheckoutData } from "@/models/shop.model";
-import { GetGoodsById } from "@/services/shop.service";
+import { Checkout, GetGoodsById } from "@/services/shop.service";
 import { ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
@@ -30,6 +30,14 @@ const submit = () => {
     address: address.value,
   };
   console.log(checkoutData);
+  Checkout(checkoutData)
+    .then(function (response) {
+      router.push({ name: "success" });
+    })
+    .catch(function (error) {
+      console.log(error);
+      alert("Error: Some input isn't filled.");
+    });
 };
 </script>
 <template>
