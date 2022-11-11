@@ -25,13 +25,6 @@ console.log(goodsesData);
           :image="goods.image"
         >
         </ShopCard>
-        <!-- <PokemonCard
-          v-for="pokemon of pokemons"
-          :key="pokemon.name"
-          :name="pokemon.name"
-          :img="pokemon.img"
-          @view-detail="onViewDetail"
-        ></PokemonCard> -->
       </div>
     </div>
   </div>
