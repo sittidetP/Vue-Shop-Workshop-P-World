@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useRouter } from "vue-router";
+
 const props = defineProps<{
   id: number;
   title: string;
@@ -6,6 +8,14 @@ const props = defineProps<{
   category: string;
   image: string;
 }>();
+
+const emits = defineEmits<{
+  (e: "viewDetail", id: number): void;
+}>();
+
+const onClickViewDetail = (id: number) => {
+  emits("viewDetail", id);
+};
 </script>
 
 <template>
@@ -17,6 +27,8 @@ const props = defineProps<{
       <h2 class="card-title">{{ props.title }}</h2>
       <p>${{ props.price }}</p>
     </div>
-    <button class="btn btn-primary">View More</button>
+    <button class="btn btn-primary" @click="onClickViewDetail(props.id)">
+      View More
+    </button>
   </div>
 </template>

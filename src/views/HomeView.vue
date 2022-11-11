@@ -3,12 +3,17 @@ import ShopCard from "@/component/ShopCard.vue";
 import type { GoodsData } from "@/models/shop.model";
 import { GetGoodsesData } from "@/services/shop.service";
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 
 const goodsesData = ref<GoodsData[]>([]);
 
 GetGoodsesData().then((value) => (goodsesData.value = value));
 
-console.log(goodsesData);
+const router = useRouter();
+
+const onViewDetail = (id: number) => {
+  router.push({ name: "detail", params: { id: id } });
+};
 </script>
 
 <template>
@@ -23,6 +28,7 @@ console.log(goodsesData);
           :title="goods.title"
           :price="goods.price"
           :image="goods.image"
+          @view-detail="onViewDetail"
         >
         </ShopCard>
       </div>

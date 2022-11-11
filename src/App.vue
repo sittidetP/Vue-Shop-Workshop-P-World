@@ -7,6 +7,6 @@ import HomeView from "./views/HomeView.vue";
     <div class="text-2xl text-white">My Shop</div>
   </div>
   <div class="p-4 lg:p-8">
-    <HomeView></HomeView>
+    <RouterView></RouterView>
   </div>
 </template>
